@@ -4,12 +4,12 @@ one:
   start_date: 2016-02-07 12:31:15
   end_date: 2016-02-07 12:31:15
   state: false
-  user_id: 1
-  pet_id: 1
+  user: one
+  pet: one
 
 two:
   start_date: 2016-02-07 12:31:15
   end_date: 2016-02-07 12:31:15
   state: false
-  user_id: 1
-  pet_id: 1
+  user: two
+  pet: two

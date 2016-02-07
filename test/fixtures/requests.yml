@@ -2,12 +2,12 @@
 
 one:
   message: MyText
-  state: false
-  user_id: 1
-  order_id: 1
+  state: pending
+  user: one
+  order: one
 
 two:
   message: MyText
-  state: false
-  user_id: 1
-  order_id: 1
+  state: pending
+  user: two
+  order: two

@@ -6,7 +6,7 @@ one:
   age: 1
   description: MyText
   avatar: MyString
-  user_id: 1
+  user: :one
 
 two:
   name: MyString
@@ -14,4 +14,4 @@ two:
   age: 1
   description: MyText
   avatar: MyString
-  user_id: 1
+  user: :one
