@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207110137) do
+ActiveRecord::Schema.define(version: 20160207144339) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "user_id",           limit: 4
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160207110137) do
 
   create_table "requests", force: :cascade do |t|
     t.text     "message",    limit: 65535
-    t.boolean  "state"
+    t.string   "state",      limit: 255
     t.integer  "user_id",    limit: 4
     t.integer  "order_id",   limit: 4
     t.datetime "created_at",               null: false
