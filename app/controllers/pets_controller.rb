@@ -25,7 +25,7 @@ class PetsController < ApplicationController
   # POST /pets.json
   def create
     @pet = Pet.new(pet_params)
-
+    @pet.user = current_user
     respond_to do |format|
       if @pet.save
         format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
@@ -61,6 +61,10 @@ class PetsController < ApplicationController
     end
   end
 
+  def my
+    @pets = Pet.where(user: current_user)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pet
@@ -69,6 +73,6 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params[:pet]
+      params.require(:pet).permit(:name, :gender, :age, :description, :avatar, :user_id)
     end
 end

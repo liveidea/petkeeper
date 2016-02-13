@@ -7,5 +7,20 @@
       %ul
         - @pet.errors.full_messages.each do |message|
           %li= message
-  .actions
-    = f.submit
+  .form-group
+    = f.label :name
+    = f.text_field :name, placeholder: 'Enter pet name'
+  .form-group
+    = f.label :age
+    = f.text_field :age, placeholder: 'Enter pet age'
+  .form-group
+    = f.label :male
+    = f.radio_button :gender, 'male', :checked => true
+    = f.label :female
+    = f.radio_button :gender, 'female'
+  .form-group
+    = f.label :description
+  %br
+    = f.text_area :description, placeholder: 'Enter pets description'
+  .form-group
+    %button.btn.btn-default{:type => "submit"} Submit

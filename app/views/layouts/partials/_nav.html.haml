@@ -9,8 +9,10 @@
       = link_to 'Petkeeper', root_path, class: 'navbar-brand'
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li.active
+        %li
           = link_to 'Home', root_path
+        %li
+          = link_to 'My pets', my_pets_path
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
