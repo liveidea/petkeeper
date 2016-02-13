@@ -1,24 +1,21 @@
 %p#notice= notice
-%h1 My Pets
--# %table
--#   %thead
--#     %tr
--#       %th{:colspan => "3"}
--#   %tbody
--#     - @pets.each do |pet|
--#       %tr
--#         %td= link_to 'Show', pet
--#         %td= link_to 'Edit', edit_pet_path(pet)
--#         %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
--# %br/
-= link_to 'New Pet', new_pet_path
+%h1 My pets
 
-%my-petlist
-  - @pets.each do |pet|
-    %ul.pets-list
-      %li.pets-list--item
-        = link_to pet.name, pet, class: 'pets-list--name'
-      %li.pets-list--item
-        = link_to 'Edit', edit_pet_path(pet)
-      %li.pets-list--item
-        = link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Age
+      %th Gender
+      %th{:colspan => "3"} Actions
+  %tbody
+    - @pets.each do |pet|
+      %tr
+        %td= pet.name
+        %td= pet.age
+        %td= pet.gender
+        %td= link_to 'Show', pet
+        %td= link_to 'Edit', edit_pet_path(pet)
+        %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Pet', new_pet_path
