@@ -12,8 +12,14 @@
         %li
           = link_to 'Home', root_path
         %li
-          = link_to 'My pets', my_pets_path
+          = link_to 'Pets', pets_path
+        %li
+          = link_to 'Orders', orders_path
       %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'My pets', my_pets_path
+        %li
+          = link_to 'My orders', my_orders_path
         - if user_signed_in?
           %li
             = link_to 'Logout', destroy_user_session_path, :method => :delete
