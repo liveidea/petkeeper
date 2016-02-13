@@ -8,7 +8,13 @@ Rails.application.routes.draw do
 
   resources :orders do
     get :my, on: :collection
+
+    resources :requests do
+      get :my, on: :collection
+    end
   end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
