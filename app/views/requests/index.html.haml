@@ -1,0 +1,21 @@
+%h1 Requests
+
+%table.table
+  %thead
+    %tr
+      %th Message
+      %th State
+      %th{ colspan: '3' } Actions
+
+  %tbody
+    - @order.requests.each do |request|
+      %tr
+        %td= request.message
+        %td= request.state
+        %td= link_to 'Show', order_request_path(request)
+        %td= link_to 'Edit', edit_request_path(request)
+        %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Request', new_request_path

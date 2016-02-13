@@ -10,6 +10,10 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @requests = @order.requests.all
+    @request = @order.requests.new
+
   end
 
   # GET /orders/new
