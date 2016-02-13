@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem "autoprefixer-rails"
 # Use HAML for views
 gem 'haml'
+gem "haml-rails", "~> 0.9"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
