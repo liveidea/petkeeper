@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
+    @order.user = current_user
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -61,6 +61,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def my
+    @orders = Order.where(user: current_user)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
@@ -69,6 +73,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params[:order]
+      params.require(:order).permit(:start_date, :end_date, :state, :user_id, :pet_id)
     end
 end
