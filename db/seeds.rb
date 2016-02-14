@@ -2,10 +2,10 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 users = User.create([
-    { name: 'Jack', email: "jack@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 28, avatar: 'avatar-user-default.png', phone: '+380881122333' },
-    { name: 'Alice', email: "alice@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 23, avatar: 'avatar-user-default.png', phone: '+380882233444' },
-    { name: 'Jessie', email: "jessiedsd@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' },
-    { name: 'Jessie', email: "jessie@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' }
+    { name: 'Jack', email: 'jack@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 28, avatar: 'avatar-user-default.png', phone: '+380881122333' },
+    { name: 'Alice', email: 'alice@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 23, avatar: 'avatar-user-default.png', phone: '+380882233444' },
+    { name: 'Jessie', email: 'jessiedsd@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' },
+    { name: 'Jessie', email: 'jessie@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' }
   ])
 
 pets = Pet.create([
@@ -15,17 +15,18 @@ pets = Pet.create([
     { name: 'Daisy', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
     { name: 'Jack', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
     { name: 'Dogmeat', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
-    { name: 'Pal', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
-    { name: 'Paul', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
-    { name: 'Freddy', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[2] },
+    { name: 'Pal', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[0] },
+    { name: 'Paul', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[0] },
+    { name: 'Freddy', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[0] },
     { name: 'Max', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[3] },
     { name: 'Rex', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[3] },
     { name: 'Jack', gender: 'female', age: 4, description: 'The Golden Retriever is one of the more popular dogs in the United States. It makes an excellent pet as well as a work dog. It is a medium size dog known for its golden coat.', avatar: 'avatar-pet-default.png', user: users[3] }
   ])
 
 orders = Order.create([
-    { start_date: Time.now + 2.days, end_date: Time.now + 7.days, user: users[0], pet: users[0].pets[0] },
-    { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1] }
+    { start_date: Time.now + 2.days, end_date: Time.now + 7.days, user: users[0], pet: users[0].pets[0], title: 'Поcидіти з котіком', description: 'їду закордон,потрібна взяти кота на тиждень' },
+    { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з пітоном', description: 'їду закордон,потрібна взяти пітона на тиждень' },
+    { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з собакою', description: 'їду закордон,потрібна взяти собаку на тиждень' }
   ])
 
 requests = Request.create([
