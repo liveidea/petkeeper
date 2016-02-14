@@ -20,6 +20,10 @@ module ApplicationHelper
     order.user_id == current_user.id
   end
 
+  def request_owner?(request)
+    request.user_id == current_user.id
+  end
+
   def has_any_pet?
     current_user.pets.any?
   end

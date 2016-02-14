@@ -21,6 +21,9 @@
             = link_to 'Мої тваринки', my_pets_path
           %li
             = link_to 'Мої оголошення', my_orders_path
+          - if has_any_request?
+            %li
+              = link_to 'Мої заявки', my_requests_path
           %li
             = link_to 'Вийти', destroy_user_session_path, :method => :delete
         - else

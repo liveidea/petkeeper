@@ -1,26 +1,27 @@
 %p#notice= notice
-%h1 My pets
+%h1 Мої улюбленці
 
 - if has_any_pet?
   %table.table
     %thead
       %tr
-        %th Name
-        %th Age
-        %th Gender
-        %th{:colspan => "3"} Actions
+        %th Ім'я
+        %th Вік
+        %th Стать
+        %th{:colspan => "3"} Дії
     %tbody
       - @pets.each do |pet|
         %tr
           %td= pet.name
           %td= pet.age
           %td= pet.gender
-          %td= link_to 'Show', pet
-          %td= link_to 'Edit', edit_pet_path(pet)
-          %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
-          
+          %td= link_to 'Показати', pet
+          - if pet_owner?(pet)
+            %td= link_to 'Редагувати', edit_pet_path(pet)
+            %td= link_to 'Видалити', pet, method: :delete, data: { confirm: 'Ви впевнені?' }
+
 - else
   %h4 У вас ще немає тваринок
 
 %br/
-= link_to 'New Pet', new_pet_path
+= link_to 'Добавити улюбленця', new_pet_path
