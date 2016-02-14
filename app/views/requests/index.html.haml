@@ -1,21 +1,22 @@
-%h1 Requests
+%h1 Заявка
 
 %table.table
   %thead
     %tr
-      %th Message
-      %th State
-      %th{ colspan: '3' } Actions
+      %th Повідомлення
+      %th Стан
+      %th{ colspan: '3' } Дії
 
   %tbody
     - @order.requests.each do |request|
       %tr
         %td= request.message
         %td= request.state
-        %td= link_to 'Show', order_request_path(request)
-        %td= link_to 'Edit', edit_request_path(request)
-        %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Показати', order_request_path(request)
+          - if request_owner?(request)
+          %td= link_to 'Редагувати', edit_request_path(request)
+          %td= link_to 'Видалити', request, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-  
-= link_to 'New Request', new_request_path
+
+= link_to 'Нова заявка', new_request_path
