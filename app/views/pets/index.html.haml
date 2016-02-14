@@ -15,7 +15,10 @@
         %td= pet.age
         %td= pet.gender
         %td= link_to 'Show', pet
-        %td= link_to 'Edit', edit_pet_path(pet)
-        %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
+        - if user_signed_in? && pet_owner?(pet)
+          %td= link_to 'Edit', edit_pet_path(pet)
+          %td= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Pet', new_pet_path
+  
+- if user_signed_in?
+  = link_to 'New Pet', new_pet_path

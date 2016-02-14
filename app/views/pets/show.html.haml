@@ -1,4 +1,7 @@
 %p#notice= notice
-= link_to 'Edit', edit_pet_path(@pet)
-|
+
+- if user_signed_in? && pet_owner?(@pet)
+  = link_to 'Edit', edit_pet_path(@pet)
+  |
+
 = link_to 'Back', pets_path
