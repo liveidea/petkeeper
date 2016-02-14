@@ -15,5 +15,6 @@
         %td= order.end_date.to_date
         %td= order.state
         %td= link_to 'Надіслати заявку!', order
-        %td= link_to 'Edit', edit_order_path(order)
-        %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - if order_owner?(order)
+          %td= link_to 'Редагувати', edit_order_path(order)
+          %td= link_to 'Видалити', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
