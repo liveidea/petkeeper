@@ -1,6 +1,12 @@
 %h1 Мої оголошення
 
-= render 'orders/partials/order_table'
+- if has_any_order?
+  = render 'orders/partials/order_table'
+- else
+  %h4 У вас ще немає оголошень
+  %p
+    Перед тим як створювати оголошення, необхідно
+    = link_to 'Додати улюбленця', new_pet_path
 
 - if can_create_order?
   = link_to 'Створити оголошення', new_order_path

@@ -6,7 +6,6 @@ users = User.create([
     { name: 'Alice', email: "alice@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 23, avatar: 'avatar-user-default.png', phone: '+380882233444' },
     { name: 'Jessie', email: "jessiedsd@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' },
     { name: 'Jessie', email: "jessie@petsitter.com", password: "12345678", password_confirmation: "12345678", age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' }
-
   ])
 
 pets = Pet.create([
