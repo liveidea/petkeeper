@@ -7,9 +7,8 @@
 Опис:
 = @order.description
 %br
-  Дата початку
-= @order.start_date
-%br
-  Дата кінця:
-= @order.end_date
+  На період з
+= @order.start_date.strftime("%F")
+до
+= @order.end_date.strftime("%F")
 %br
