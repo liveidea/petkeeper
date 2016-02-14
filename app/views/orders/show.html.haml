@@ -1,8 +1,11 @@
 %p#notice= notice
 
 = render 'orders/partials/order'
-= render 'requests/form'
 
-= link_to 'Edit', edit_order_path(@order)
-\|
+- if can_create_request?(@order)
+  = render 'requests/form'
+
+- if user_signed_in? && order_owner?(@order)
+  = link_to 'Edit', edit_order_path(@order)
+  |
 = link_to 'Back', orders_path

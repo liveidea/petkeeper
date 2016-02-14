@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   resources :orders do
     get :my, on: :collection
-
-    resources :requests do
-      get :my, on: :collection
-    end
+    resources :requests
   end
 
+  resources :requests do
+    get :my, on: :collection
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

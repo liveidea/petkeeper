@@ -1,4 +1,6 @@
 %h1 Оголошення
 
 = render 'orders/partials/order_table'
-= link_to 'Створити оголошення', new_order_path
+
+- if can_create_order?
+  = link_to 'Створити оголошення', new_order_path

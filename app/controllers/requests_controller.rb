@@ -1,10 +1,11 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Request.all
+    @requests = current_user.requests.all
   end
 
   # GET /requests/1
@@ -63,6 +64,10 @@ class RequestsController < ApplicationController
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def my
+    @requests = current_user.requests.all
   end
 
   private

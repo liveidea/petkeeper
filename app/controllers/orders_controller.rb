@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @requests = @order.requests.all
     @request = @order.requests.new
-
   end
 
   # GET /orders/new
