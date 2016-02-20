@@ -10,8 +10,6 @@
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li
-          = link_to 'Головна', root_path
-        %li
           = link_to 'Тварини', pets_path
         %li
           = link_to 'Оголошення', orders_path
@@ -25,11 +23,15 @@
             %li
               = link_to 'Мої заявки', my_requests_path
           %li
-            = link_to 'Вийти', destroy_user_session_path, :method => :delete
+            = link_to "", edit_user_registration_path(current_user), class:"fa fa-cog fa-fw fa-2x"
+          %li
+            = link_to "", destroy_user_session_path, :method => :delete, class:"fa fa-sign-out fa-2x"
           %li
             = link_to current_user.id , "#"
-          %li
-            = image_tag(current_user.avatar.url)
+          %li.navbar-trigger
+            = image_tag(current_user.avatar.url, class:"navbar-user-image")
+            .user-menu
+              %ul
         - else
           %li
             = link_to 'Зайти', new_user_session_path
