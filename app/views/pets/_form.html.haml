@@ -15,16 +15,19 @@
     = f.text_field :age, placeholder: 'Вкажіть вік тваринки', class: 'form-control'
   .form-group
     = f.label :gender
-    .radio
-      = f.label :gender do
-        = f.radio_button :gender, 'male', :checked => true
-        Він
-    .radio
-      = f.label :gender do
-        = f.radio_button :gender, 'female'
-        Вона
+    = f.radio_button :gender, 'Він', :checked => true
+    = f.label :female
+    = f.radio_button :gender, 'Вона'
+
+  .form-group
+    = f.label :kind
+    = f.text_field :kind, placeholder: "Напр. Собака"
+  .form-group
+    = f.label :species
+    = f.text_field :species, placeholder: "Напр. Пітбуль"
   .form-group
     = f.label :description
     = f.text_area :description, placeholder: 'Вкажіть опис тваринки', class: 'form-control'
+    
   .form-group
-    %button.btn.btn-default{:type => "submit"} Зареєструвати улюбленця
+    %button.btn.btn-default{:type => "submit"} Зареєструвати тваринку

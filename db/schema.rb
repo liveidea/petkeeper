@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214105000) do
+ActiveRecord::Schema.define(version: 20160216091732) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "user_id",           limit: 4
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20160214105000) do
     t.integer  "user_id",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "kind",        limit: 255
+    t.string   "species",     limit: 255
   end
 
   create_table "requests", force: :cascade do |t|
