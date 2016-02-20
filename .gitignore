@@ -10,6 +10,9 @@
 # Ignore database config.
 /config/database.yml
 
+# Ignore public upload files.
+/public/uploads/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
