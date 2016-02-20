@@ -1,0 +1,71 @@
+.pet {
+  border: $border-size solid $gray-light;
+  display: flex;
+  padding: 10px;
+
+  &--image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    flex: none;
+    margin-right: 10px;
+    width: 47px;
+  }
+
+  &--info {
+    flex: 1 1 auto;
+  }
+
+  &--name {
+    color: $black;
+    display: inline-block;
+    margin-bottom: 10px;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &--details {
+    display: flex;
+    color: $gray-dark;
+    font-size: $font-size-small;
+    padding: 0;
+    list-style: none;
+  }
+
+  &--details-item {
+    &:not(:first-child) {
+      margin-left: 5px;
+
+      &::before {
+        content: '|';
+      }
+    }
+  }
+
+  &--menu {
+    flex: none;
+    padding: 0;
+    margin-left: 10px;
+    list-style: none;
+  }
+
+  &--menu-link {
+    color: $gray-dark;
+    font-size: $font-size-small;
+
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+
+  &--menu-link.-danger {
+    color: $red;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

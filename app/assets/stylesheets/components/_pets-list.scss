@@ -1,13 +1,12 @@
 .pets-list {
-  margin-bottom: $margin;
+  display: block;
   padding: 0;
-  list-style: none;
+  margin-bottom: $margin;
 
   &--item {
-    display: inline-block;
-  }
-
-  &--name {
-    color: $black;
+    
+    & + & {
+      margin-top: $margin;
+    }
   }
 }
