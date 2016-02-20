@@ -2,10 +2,10 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 users = User.create([
-    { name: 'Jack', email: 'jack@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 28, avatar: 'avatar-user-default.png', phone: '+380881122333' },
-    { name: 'Alice', email: 'alice@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 23, avatar: 'avatar-user-default.png', phone: '+380882233444' },
-    { name: 'Jessie', email: 'jessiedsd@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' },
-    { name: 'Jessie', email: 'jessie@petsitter.com', password: '12345678', password_confirmation: '12345678', age: 30, avatar: 'avatar-user-default.png', phone: '+380883344555' }
+    { first_name: 'Jack', last_name: 'Jacky', email: 'jack@petsitter.com', password: '12345678', password_confirmation: '12345678', date_of_birth: Time.now - 30.years, avatar: 'avatar-user-default.png', phone: '+380881122333' },
+    { first_name: 'Alice', last_name: 'Copper', email: 'alice@petsitter.com', password: '12345678', password_confirmation: '12345678', date_of_birth: Time.now - 25.years, avatar: 'avatar-user-default.png', phone: '+380882233444' },
+    { first_name: 'John', last_name: 'Hammer', email: 'john@petsitter.com', password: '12345678', password_confirmation: '12345678', date_of_birth: Time.now - 34.years, avatar: 'avatar-user-default.png', phone: '+380883344555' },
+    { first_name: 'Jessie', last_name: 'Jessy', email: 'jessie@petsitter.com', password: '12345678', password_confirmation: '12345678', date_of_birth: Time.now - 21.years, avatar: 'avatar-user-default.png', phone: '+380883344555' }
   ])
 
 pets = Pet.create([
