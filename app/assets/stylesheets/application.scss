@@ -14,6 +14,12 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+// Variables
  @import 'config/variables';
 
+// Layouts
+ @import 'layouts/flex-layout';
+
+// Components
  @import 'components/pets-list';
+ @import 'components/pet';

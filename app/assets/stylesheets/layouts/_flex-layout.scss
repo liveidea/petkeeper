@@ -1,0 +1,12 @@
+.flex-layout {
+  display: flex;
+  flex-direction: column;
+
+  &--big {
+    flex: 1 1 auto;
+  }
+
+  &--small {
+    flex: none;
+  }
+}

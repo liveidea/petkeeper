@@ -1,24 +1,35 @@
 %p#notice= notice
-%h1 Тваринки
 
-%table.table
-  %thead
-    %tr
-      %th Кличка
-      %th Вік
-      %th Стать
-      %th{:colspan => "3"} Дії
-  %tbody
-    - @pets.each do |pet|
-      %tr
-        %td= pet.name
-        %td= pet.age
-        %td= pet.gender
-        %td= link_to 'Показати', pet
-        - if user_signed_in? && pet_owner?(pet)
-          %td= link_to 'Редагувати', edit_pet_path(pet)
-          %td= link_to 'Видалити', pet, method: :delete, data: { confirm: 'Ви впевнені?' }
-%br/
+%h1 Улюбленці
 
-- if user_signed_in?
-  = link_to 'Добавити улюбленця', new_pet_path
+%ul.pets-list
+  - @pets.each do |pet|
+    %li.pets-list--item.pet
+      = link_to '', pet, class: 'pet--image', style: "background-image: url(#{pet.avatar})"
+      .pet--info
+        = link_to pet.name, pet, class: 'pet--name'
+        %ul.pet--details
+
+          - unless pet.age.nil?
+            %li.pet--details-item
+              = pet.age
+
+          - unless pet.gender.nil?
+            %li.pet--details-item
+              = pet.gender
+
+          - unless pet.kind.nil?
+            %li.pet--details-item
+              = pet.kind
+
+          - unless pet.species.nil?
+            %li.pet--details-item
+              = pet.species
+
+      - if user_signed_in? && pet_owner?(pet)
+        %ul.pet--menu
+          %li.pet--menu-item
+            = link_to 'Редагувати', edit_pet_path(pet), class: 'pet--menu-link'
+          %li.pet--menu-item
+            = link_to 'Видалити', pet, class: 'pet--menu-link -danger',
+                      method: :delete, data: { confirm: 'Ви впевнені?' }
