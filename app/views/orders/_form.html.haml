@@ -13,13 +13,13 @@
     = f.label 'Мета оголошення'
     = f.text_field :title, placeholder: 'Взяти собаку на 3 дні', class: 'form-control'
   .form-group
-    = f.label 'Опис оголошення'
-    = f.text_area :description, placeholder: 'Дайте короткий опис ситуації!', cols: 40, rows: 10, class: 'form-control'
-  .form-group
-    = f.label 'Початкова дата'
-    = f.date_select :start_date, {}, class: 'form-control'
-  .form-group
-    = f.label 'Кінцева дата'
-    = f.date_select :end_date, {},  class: 'form-control'
+    = f.label "Опис оголошення"
+    %br
+    = f.text_area :description, placeholder: "Дайте короткий опис ситуації!", cols: 40, rows: 10, class: 'form-control'
+    .form-group
+    = f.label "Оголошення актуальне з"
+    = f.date_select :start_date
+    = f.label "до"
+    = f.date_select :end_date, class: 'form-control'
   .form-group
     %button.btn.btn-default{:type => 'submit'} Створити Оголошення

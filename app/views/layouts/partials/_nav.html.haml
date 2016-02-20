@@ -26,6 +26,10 @@
               = link_to 'Мої заявки', my_requests_path
           %li
             = link_to 'Вийти', destroy_user_session_path, :method => :delete
+          %li
+            = link_to current_user.id , "#"
+          %li
+            = image_tag(current_user.avatar.url)
         - else
           %li
             = link_to 'Зайти', new_user_session_path
