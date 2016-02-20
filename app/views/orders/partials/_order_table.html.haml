@@ -12,11 +12,14 @@
         %td= link_to truncate(order.title, length: 40), order
         %td= order.start_date.to_date
         %td= order.end_date.to_date
-        -  if can_create_request?(order)
-          %td= link_to 'Надіслати заявку!', order
+        - if user_signed_in?
+          - if can_create_request?(order)
+            %td= link_to 'Надіслати заявку!', order
+          - else
+            - unless order_owner?(order)
+              %td.text-success Заявка вже надіслана
+          - if order_owner?(order)
+            %td= link_to 'Редагувати', edit_order_path(order)
+            %td= link_to 'Видалити', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
         - else
-          - unless order_owner?(order)
-            %td.text-success Заявка вже надіслана
-        - if order_owner?(order)
-          %td= link_to 'Редагувати', edit_order_path(order)
-          %td= link_to 'Видалити', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td= link_to 'Надіслати заявку!', new_user_session_path
