@@ -8,5 +8,4 @@ $(document).ready(function() {
       $('.user-menu').removeClass('-show');
     }
   });
-
 });
