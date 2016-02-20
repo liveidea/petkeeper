@@ -28,6 +28,8 @@
   .form-group
     = f.label :description
     = f.text_area :description, placeholder: 'Вкажіть опис тваринки', class: 'form-control'
-    
+  .form-group
+    = f.file_field :avatar
+    = f.hidden_field :avatar_cache
   .form-group
     %button.btn.btn-default{:type => "submit"} Зареєструвати тваринку

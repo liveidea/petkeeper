@@ -1,5 +1,6 @@
 %p#notice= notice
 
+= image_tag(@pet.avatar.url)
 - if user_signed_in? && pet_owner?(@pet)
   = link_to 'Редагувати', edit_pet_path(@pet)
   |
