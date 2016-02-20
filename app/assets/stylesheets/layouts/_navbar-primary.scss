@@ -1,0 +1,67 @@
+.navbar-primary {
+  border-bottom: $border-size solid $gray-dark;
+
+  &--inner {
+    display: flex;
+  }
+
+  &--logo {
+    align-items: center;
+    display: flex;
+    flex: none;
+    justify-content: flex-start;;
+    margin-right: $margin;
+    width: 150px;
+  }
+
+  &--list {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &--link {
+    display: block;
+    padding: $padding;
+  }
+
+  &--user {
+    display: flex;
+    flex: none;
+    justify-content: flex-end;
+    margin-left: $margin;
+    width: 150px;
+  }
+
+  &--user-inner {
+    align-items: stretch;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  &--name {
+    align-self: center;
+    margin-right: 10px;
+  }
+
+  &--avatar {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    display: flex;
+    width: 30px;
+  }
+
+  &--login {
+    display: block;
+    padding: $padding;
+    text-align: right;
+    width: 150px;
+  }
+}

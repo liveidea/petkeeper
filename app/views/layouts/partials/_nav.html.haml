@@ -1,47 +1,31 @@
-%nav.navbar.navbar-default.navbar-static-top.flex-layout--small
-  .container
-    .navbar-header
-      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Petkeeper', root_path, class: 'navbar-brand'
-    #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav
-        %li
-          = link_to 'Тварини', pets_path
-        %li
-          = link_to 'Оголошення', orders_path
-      %ul.nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          %li
-            = link_to 'Мої тваринки', my_pets_path
-          %li
-            = link_to 'Мої оголошення', my_orders_path
-          - if has_any_request?
-            %li
-              = link_to 'Мої заявки', my_requests_path
-          %li
-            = link_to "", edit_user_registration_path(current_user), class:"fa fa-cog fa-fw fa-2x"
-          %li
-            = link_to "", destroy_user_session_path, :method => :delete, class:"fa fa-sign-out fa-2x"
-          %li
-            = link_to current_user.id , "#"
-        - if user_signed_in?
-          %li.navbar-trigger
-            = image_tag(current_user.avatar.url, class:"navbar-user-image")
-            .user-menu
-              = image_tag(current_user.avatar.url, class:"user-menu--image")
-              %ul.user-menu--list
-                %li.user-menu--item
-                  = current_user.first_name
-                %li.user-menu--item
-                  = link_to 'Мої тваринки', my_pets_path
-                %li.user-menu--item
-                  = link_to 'Мої оголошення', my_orders_path
-                %li.user-menu--item
-                  = link_to 'Мої заявки', my_requests_path
-        - else
-          %li
-            = link_to 'Зайти', new_user_session_path
+%nav.navbar-primary.flex-layout--small
+  .container.navbar-primary--inner
+    .navbar-primary--logo
+      = link_to 'Petkeeper', root_path
+    %ul.navbar-primary--list
+      %li.navbar-primary--item
+        = link_to 'Тварини', pets_path, class: 'navbar-primary--link'
+      %li.navbar-primary--item
+        = link_to 'Оголошення', orders_path, class: 'navbar-primary--link'
+    - if user_signed_in?
+      .navbar-primary--user
+        .navbar-primary--user-inner.js-user-menu-trigger
+          %span.navbar-primary--name
+            = current_user.first_name
+          .navbar-primary--avatar{ style: "background-image: url(#{current_user.avatar.url})" }
+        .user-menu
+          %ul.user-menu--list
+            %li.user-menu--item
+              = link_to 'Мої тваринки', my_pets_path, class: 'user-menu--link'
+            %li.user-menu--item
+              = link_to 'Мої оголошення', my_orders_path, class: 'user-menu--link'
+            - if has_any_request?
+              %li.user-menu--item
+                = link_to 'Мої заявки', my_requests_path, class: 'user-menu--link'
+            %li.user-menu--item
+              = link_to '', edit_user_registration_path(current_user), class:"fa fa-cog fa-fw fa-2x"
+            %li.user-menu--item
+              = link_to '', destroy_user_session_path, :method => :delete, class:"fa fa-sign-out fa-2x"
+    - else
+      .navbar-primary--user
+        = link_to 'Зайти', new_user_session_path, class: 'navbar-primary--login'
