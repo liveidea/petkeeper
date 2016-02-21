@@ -29,6 +29,7 @@ class PetsController < ApplicationController
     respond_to do |format|
       if @pet.save
         format.html { redirect_to @pet, notice: 'Тваринку успішно створено!' }
+        format.js
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -57,6 +58,7 @@ class PetsController < ApplicationController
     @pet.destroy
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
+      format.js 
       format.json { head :no_content }
       format.js
     end
