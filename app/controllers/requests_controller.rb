@@ -5,7 +5,9 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = current_user.requests.all
+    @order = Order.find(params[:order_id])
+    redirect_to root_path unless @order.user == current_user
+    @requests = @order.requests.all
   end
 
   # GET /requests/1

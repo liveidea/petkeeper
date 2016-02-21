@@ -14,17 +14,20 @@
  *= require font-awesome
  */
 
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 // Variables
- @import 'config/variables';
+@import 'config/variables';
 
 // Layouts
- @import 'layouts/flex-layout';
- @import 'layouts/navbar-primary';
+@import 'layouts/flex-layout';
+@import 'layouts/navbar-primary';
+@import 'layouts/layout-primary';
 
 // Components
- @import 'components/pets-list';
- @import 'components/pet';
- @import 'components/user-menu';
+@import 'components/pets-list';
+@import 'components/pet';
+@import 'components/user-menu';
+@import 'components/media';
+@import 'components/text-block';
