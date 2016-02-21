@@ -1,5 +1,18 @@
 .navbar-primary {
+  background-color: $white;
   border-bottom: $border-size solid $gray-light;
+  width: 100%;
+
+  &.-fixed {
+    right: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+
+    & + .navbar-primary--helper {
+      display: block;
+    }
+  }
 
   &--inner {
     display: flex;
@@ -92,5 +105,12 @@
     padding: $padding;
     text-align: right;
     width: 150px;
+  }
+
+  &--helper {
+    display: none;
+    height: $main-navbar-height;
+    margin-bottom: $margin;
+    width: 100%;
   }
 }

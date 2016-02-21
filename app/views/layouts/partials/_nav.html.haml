@@ -1,4 +1,4 @@
-%nav.navbar-primary.flex-layout--small
+%nav.navbar-primary.-fixed.flex-layout--small
   .container.navbar-primary--inner
     .navbar-primary--logo
       = link_to 'Petkeeper', root_path, class: 'navbar-primary--logo-link'
@@ -25,7 +25,7 @@
               %li.user-menu--item
                 = link_to 'Мої заявки', my_requests_path, class: 'user-menu--link'
             %li.user-menu--item
-              = link_to edit_user_registration_path(current_user), class:"user-menu--link" do
+              = link_to edit_user_registration_path, class:"user-menu--link" do
                 Налаштування
                 %i.fa.fa-cog.fa-fw.fa-1x
             %li.user-menu--item
@@ -35,3 +35,5 @@
     - else
       .navbar-primary--user
         = link_to 'Зайти', new_user_session_path, class: 'navbar-primary--login'
+
+.navbar-primary--helper
