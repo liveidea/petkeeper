@@ -14,8 +14,14 @@
         = f.label "Last name"
         = f.text_field :last_name, class: "form-control"
       .form-group
-        = f.label "Date of birth"
+        = f.label "Дата народження"
         = f.date_select :date_of_birth
+      .form-group
+        = f.label "Ваше місто"
+        = f.text_area :location, class: 'form-control'
+      .form-group
+        = f.label "Про вас"
+        = f.text_area :description, class: 'form-control'
       .form-group
         = f.label :password
         %br/

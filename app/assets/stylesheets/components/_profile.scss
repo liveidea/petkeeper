@@ -1,13 +1,66 @@
+$namespace: ".profile";
+
+#{$namespace} {
+
+}
+
+#{$namespace}__mod {
+  #{$namespace}--avatar {
+
+  }
+}
+
+#{$namespace}--avatar {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: none;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+}
+
 .profile {
+  display: flex;
+  justify-content: center;
 
   &--avatar {
-    margin-top: $margin * 2;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    flex: none;
     width: 300px;
     height: 300px;
-    margin-bottom: $margin;
     border-radius: 5px;
   }
+
+  &--info {
+    margin-left: 10px;
+    border-radius: 5px;
+    flex: 1 1 auto;
+    background-color: lighten($gray-light, 5%);
+    padding: $padding;
+  }
+    &--name {
+      margin: 0 0 $margin;
+    }
+
+    &--text {
+      color: lighten($black, 15%);
+      padding: 0;
+      font-size: $font-size-normal;
+    }
+
+    &--list {
+      color: lighten($black, 15%);
+      list-style: none;
+      padding: 0;
+    }
+
+    &--list-item {
+      span:first-child {
+        font-weight: 700;
+      }
+    }
+
 }

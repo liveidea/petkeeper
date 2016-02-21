@@ -1,2 +1,21 @@
 .profile
   .profile--avatar{ style: "background-image: url(#{@user.avatar.url})" }
+  .profile--info
+    %h2.profile--name
+      = "#{@user.first_name} #{@user.last_name}"
+    %ul.profile--list
+      %li.profile--list-item
+        %span
+          Дата народження:
+        %span
+          =  @user.date_of_birth
+      %li.profile--list-item
+        %span
+          Місто:
+        %span
+          = @user.location
+    %p.profile--text
+      = @user.description
+
+.pet-list
+  .pet-box

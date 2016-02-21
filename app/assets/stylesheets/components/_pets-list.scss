@@ -1,12 +1,12 @@
 .pets-list {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
-  margin-bottom: $margin;
+  margin: -2% 0 2% -2%;
 
   &--item {
-    
-    & + & {
-      margin-top: $margin;
-    }
+    flex: 0 0 23%;
+    margin: 2% 0 0 2%;
+    height: 300px;
   }
 }
