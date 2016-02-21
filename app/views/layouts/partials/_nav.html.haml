@@ -14,6 +14,8 @@
             = current_user.first_name
           .navbar-primary--avatar{ style: "background-image: url(#{current_user.avatar.url})" }
         .user-menu
+          .user-menu--ava{ style: "background-image: url(#{current_user.avatar.url})" }
+          = link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user), class: "user-menu--user"
           %ul.user-menu--list
             %li.user-menu--item
               = link_to 'Мої тваринки', my_pets_path, class: 'user-menu--link'
@@ -23,9 +25,13 @@
               %li.user-menu--item
                 = link_to 'Мої заявки', my_requests_path, class: 'user-menu--link'
             %li.user-menu--item
-              = link_to '', edit_user_registration_path(current_user), class:"fa fa-cog fa-fw fa-2x"
+              = link_to edit_user_registration_path(current_user), class:"user-menu--link" do
+                Налаштування
+                %i.fa.fa-cog.fa-fw.fa-1x
             %li.user-menu--item
-              = link_to '', destroy_user_session_path, :method => :delete, class:"fa fa-sign-out fa-2x"
+              = link_to destroy_user_session_path, :method => :delete, class:"user-menu--link" do
+                Вийти
+                %i.fa.fa-sign-out.fa-1x
     - else
       .navbar-primary--user
         = link_to 'Зайти', new_user_session_path, class: 'navbar-primary--login'

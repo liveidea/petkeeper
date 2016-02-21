@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get :my, on: :collection
   end
 
+  resources :users, only: [:show]
+
   resources :orders do
     get :my, on: :collection
     resources :requests
