@@ -1,0 +1,13 @@
+.profile {
+
+  &--avatar {
+    margin-top: $margin * 2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin-bottom: $margin;
+    border-radius: 5px;
+  }
+}

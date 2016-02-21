@@ -12,6 +12,19 @@
   flex-direction: column;
   align-items: center;
 
+  &--cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: $transition-dur;
+    font-size: $font-size-big;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
   &.-show {
     opacity: 1;
     visibility: visible;

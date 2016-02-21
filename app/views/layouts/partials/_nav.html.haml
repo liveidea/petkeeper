@@ -14,6 +14,7 @@
             = current_user.first_name
           .navbar-primary--avatar{ style: "background-image: url(#{current_user.avatar.url})" }
         .user-menu
+          %i.fa.fa-times.user-menu--cross.js-menu-close
           .user-menu--ava{ style: "background-image: url(#{current_user.avatar.url})" }
           = link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user), class: "user-menu--user"
           %ul.user-menu--list

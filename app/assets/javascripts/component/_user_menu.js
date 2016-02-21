@@ -8,4 +8,9 @@ $(document).ready(function() {
       $('.user-menu').removeClass('-show');
     }
   });
+
+  $('.js-menu-close').click(function() {
+    $('.user-menu').removeClass('-show');
+  });
+
 });
