@@ -5,7 +5,7 @@
 - if has_any_pet?
   %ul.pets-list
     - @pets.each do |pet|
-      %li.pets-list--item.pet
+      %li.pets-list--item.pet{ data: { id: "#{pet.id}" } }
         = link_to '', pet, class: 'pet--image', style: "background-image: url(#{pet.avatar})"
         .pet--info
           = link_to pet.name, pet, class: 'pet--name'
@@ -32,6 +32,6 @@
             = link_to 'Редагувати', edit_pet_path(pet), class: 'pet--menu-link'
           %li.pet--menu-item
             = link_to 'Видалити', pet, class: 'pet--menu-link -danger',
-                      method: :delete, data: { confirm: 'Ви впевнені?' }
+                      method: :delete, data: { confirm: 'Ви впевнені?' }, remote: true
 - else
   %h1 У вас ще немає тваринок

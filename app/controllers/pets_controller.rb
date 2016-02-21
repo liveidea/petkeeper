@@ -58,6 +58,7 @@ class PetsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
