@@ -1,17 +1,33 @@
 .navbar-primary {
-  border-bottom: $border-size solid $gray-dark;
+  border-bottom: $border-size solid $gray-light;
 
   &--inner {
     display: flex;
   }
 
   &--logo {
-    align-items: center;
+    align-items: stretch;
     display: flex;
     flex: none;
-    justify-content: flex-start;;
+    justify-content: flex-start;
     margin-right: $margin;
     width: 150px;
+  }
+
+  &--logo-link {
+    align-items: center;
+    color: $black;
+    display: flex;
+    font-size: $font-size-medium;
+    padding: 10px;
+    transition: $transition-dur;
+    width: 100%;
+
+    &:hover {
+      background-color: $gray-light;
+      color: $black;
+      text-decoration: none;
+    }
   }
 
   &--list {
@@ -24,7 +40,15 @@
 
   &--link {
     display: block;
+    color: $black;
     padding: $padding;
+    transition: $transition-dur;
+
+    &:hover {
+      background-color: $gray-light;
+      color: $black;
+      text-decoration: none;
+    }
   }
 
   &--user {
@@ -39,9 +63,14 @@
     align-items: stretch;
     cursor: pointer;
     display: flex;
-    justify-content: flex-end;;
-    padding: 10px 0;
+    justify-content: flex-end;
+    padding: 10px 10px 10px 0;
+    transition: $transition-dur;
     width: 100%;
+
+    &:hover {
+      background-color: $gray-light;
+    }
   }
 
   &--name {
