@@ -8,7 +8,7 @@
 
   .form-group
 
-    = f.label "Створити заявку"
+    = f.label 'Повідомлення'
     = f.text_area :message, class: 'form-control'
-  .form-group
-    %button.btn.btn-default{:type => "submit"} Подати заявку
+  .form-group.text-right
+    %button.btn.btn-success{:type => 'submit'} Подати заявку

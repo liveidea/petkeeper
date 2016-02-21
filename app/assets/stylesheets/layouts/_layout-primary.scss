@@ -1,0 +1,28 @@
+.layout-primary {
+
+  &--header {
+    display: flex;
+    margin-bottom: $margin;
+  }
+
+  &--list {
+    flex: 1 1 30%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &--list-item {
+
+    & + & {
+      margin-top: $margin;
+    }
+  }
+
+  &--description {
+    border-left: $border-size solid $gray-light;
+    flex: 1 1 70%;
+    padding: 10px 0 10px 20px;
+    margin-left: 10px;
+  }
+}

@@ -1,6 +1,71 @@
 %p#notice= notice
 
+.layout-primary
+  .layout-primary--header
+    %ul.layout-primary--list
+
+      %li.layout-primary--list-item.media
+        .media--avatar{ style: "background-image: url( #{@order.user.avatar })" }
+        .media--info
+          %span.media--name
+            = @order.user.email
+          %ul.media--list
+            %li.media--list-item
+              %span
+                Date of birth:
+              %span
+                = @order.user.date_of_birth
+
+      %li.layout-primary--list-item.media
+        .media--avatar{ style: "background-image: url( #{@order.pet.avatar })" }
+        .media--info
+          %span.media--name
+            = @order.pet.name
+          %ul.media--list
+            %li.media--list-item
+              %span
+                Age:
+              %span
+                = @order.pet.age
+            %li.media--list-item
+              %span
+                Gender:
+              %span
+                = @order.pet.gender
+            %li.media--list-item
+              %span
+                Kind:
+              %span
+                = @order.pet.kind
+
+    .layout-primary--description
+
+      .text-block
+        %h4.text-block--headline
+          = @order.title
+        %ul.text-block--list
+          %li.text-block--list-item
+            %span
+              Опис:
+            %span
+              = @order.description
+          %li.text-block--list-item
+            %span
+              Період:
+            %span
+              з
+              = @order.start_date.strftime("%F")
+              до
+              = @order.end_date.strftime("%F")
+
+              %span
+                (
+                = @order.period
+                днів
+                )
+
+  .layout-primary--body
+
+
 - if user_signed_in? && request_owner?(@request)
   = link_to 'Редагувати', edit_order_request_path(@order, @request)
-  \|
-= link_to 'Назад', order_path(@order)
