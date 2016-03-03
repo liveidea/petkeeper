@@ -17,7 +17,7 @@
             %td= link_to 'Надіслати заявку!', order
           - else
             - unless order_owner?(order)
-              %td.text-success Заявка вже надіслана
+              %td.text-success{ colspan: '2' } Заявка вже надіслана
           - if order_owner?(order)
             %td= link_to 'Редагувати', edit_order_path(order)
             %td= link_to 'Видалити', order, :method => :delete, :data => { :confirm => 'Are you sure?' }

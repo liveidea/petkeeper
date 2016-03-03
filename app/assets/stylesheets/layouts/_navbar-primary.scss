@@ -2,6 +2,7 @@
   background-color: $white;
   border-bottom: $border-size solid $gray-light;
   width: 100%;
+  z-index: 99;
 
   &.-fixed {
     right: 0;

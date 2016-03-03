@@ -10,13 +10,19 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Autoprefixer for stylesheets
-gem "autoprefixer-rails"
+gem 'autoprefixer-rails'
 # Use HAML for views
 gem 'haml'
+gem 'haml-rails', '~> 0.9'
+# A simple, ORM agnostic, Ruby 1.9 compatible date validator for Rails 3
+gem 'date_validator', '~> 0.9.0'
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'carrierwave'
-gem "mini_magick"
-gem "haml-rails", "~> 0.9"
-gem "font-awesome-rails"
+gem 'mini_magick'
+# Integrate Matias Meno's Dropzone awesome file upload JS library right into the Asset pipeline of your Rails apps.
+gem 'dropzonejs-rails'
+# Font-awesome-rails provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -66,5 +72,5 @@ end
 
 group :test do
   gem 'capybara'
-  gem "factory_girl_rails", "~> 4.0"
+  gem 'factory_girl_rails', '~> 4.0'
 end
