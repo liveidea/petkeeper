@@ -30,6 +30,9 @@
             = f.label 'Дата народження'
             = f.date_select :date_of_birth
       .form-group
+        = f.label 'Номер телефону'
+        = f.text_field :phone, class: 'form-control js-phone-input-mask'
+      .form-group
         = f.label 'Пароль'
 
         %i

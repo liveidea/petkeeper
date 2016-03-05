@@ -26,6 +26,11 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+
+    message = "Привіт, #{current_user.first_name}! Ви успішно добавили #{@pet.name} до свого списку тварин."
+
+    Sms.send_sms(current_user.phone, message) if current_user.phone.present?
+
     respond_to do |format|
       if @pet.save
         format.html { redirect_to @pet, notice: 'Тваринку успішно створено!' }
@@ -58,7 +63,7 @@ class PetsController < ApplicationController
     @pet.destroy
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
-      format.js 
+      format.js
       format.json { head :no_content }
       format.js
     end

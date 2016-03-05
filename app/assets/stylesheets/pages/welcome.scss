@@ -1,0 +1,43 @@
+.welcome {
+
+  &--banner {
+    background-image: image-url('landing-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: $border-radius;
+    height: 300px;
+    margin-bottom: $margin;
+    position: relative;
+    width: 100%;
+  }
+
+  &--banner-headline {
+    color: $white;
+    display: block;
+    font-size: $font-size-hudge;
+  }
+
+  &--banner-subline {
+    color: $white;
+    display: block;
+    font-size: $font-size-big;
+  }
+
+  &--banner-overlay {
+    align-items: center;
+    background-color: rgba($black, .5);
+    border-radius: $border-radius;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &--btns-block {
+    text-align: center;
+  }
+}

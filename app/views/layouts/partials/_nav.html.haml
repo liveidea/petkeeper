@@ -34,7 +34,8 @@
                 Вийти
                 %i.fa.fa-sign-out.fa-1x
     - else
-      .navbar-primary--user
-        = link_to 'Зайти', new_user_session_path, class: 'navbar-primary--login'
+      .navbar-primary--user.-secondary
+        = link_to 'Увійти', new_user_session_path, class: 'navbar-primary--login'
+        = link_to 'Зареєструватися', new_user_registration_path, class: 'btn btn-success'
 
 .navbar-primary--helper

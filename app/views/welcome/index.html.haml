@@ -1,1 +1,11 @@
-hello
+.welcome
+  .welcome--banner
+    .welcome--banner-overlay
+      %h2.welcome--banner-headline
+        Welcome at PetSitter
+      %h4.welcome--banner-subline
+        Here you could find sitter for your pet or pet to sit with
+  .welcome--container
+    .welcome--btns-block
+      = link_to 'Переглянути тварин', pets_path, class: 'btn btn-primary'
+      = link_to 'Переглянути оголошення', orders_path, class: 'btn btn-success'

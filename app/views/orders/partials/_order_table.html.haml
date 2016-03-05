@@ -11,8 +11,9 @@
                 = order.user.last_name
           .order--pet
             .order--pet-avatar{ style: "background-image: url('#{order.pet.avatar}')"}
-              - unless can_create_request?(order) || order_owner?(order)
-                .order--label Заявка вже надіслана
+              - if user_signed_in?
+                - unless can_create_request?(order) || order_owner?(order)
+                  .order--label Заявка вже надіслана
             .order--pet-info
               %span.order--pet-name
                 = order.pet.name

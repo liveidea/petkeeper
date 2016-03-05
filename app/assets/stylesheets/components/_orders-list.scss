@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   list-style: none;
   margin: (- 2%) 0 ($margin * 2) (- 2%);
-  padding: 0;
+  padding: $padding * 2 0;
 
   &--item {
     flex: 0 0 23%;
