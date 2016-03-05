@@ -1,20 +1,33 @@
 .pet {
   border: $border-size solid $gray-light;
   display: flex;
-  padding: 10px;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
 
-  &--image {
+  &--cross {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: $transition-dur;
+    font-size: $font-size-big;
+  }
+
+  &--avatar {
+    display: block;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 50%;
     flex: none;
-    margin-right: 10px;
-    width: 47px;
+    height: 250px;
   }
 
   &--info {
     flex: 1 1 auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
   }
 
   &--name {

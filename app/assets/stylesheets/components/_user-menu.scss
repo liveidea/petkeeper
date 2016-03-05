@@ -4,13 +4,29 @@
   bottom: 0;
   width: 300px;
   right: 0px;
-  background-color: $grey-extra;
+  // background-color: $grey-extra;
+  background-color: $white;
   opacity: 0;
   visibility: hidden;
   transition: $transition-dur;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: $border-size solid $gray-light;
+  box-shadow: 0 0 10px $gray-light;
+
+  &--cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: $transition-dur;
+    font-size: $font-size-big;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
 
   &.-show {
     opacity: 1;
@@ -61,5 +77,13 @@
       color: $gray-dark;
       text-decoration: none;
     }
+  }
+}
+
+
+.user--edit {
+  font-size: 16px;
+  &:hover {
+    color: gray;
   }
 }

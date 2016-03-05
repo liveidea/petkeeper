@@ -1,2 +1,27 @@
-.container.flex-layout--big
-  .user-profile
+.profile
+  .profile--avatar{ style: "background-image: url(#{@user.avatar.url})" }
+  .profile--info
+    %h2.profile--name
+      = "#{@user.first_name} #{@user.last_name}"
+    -# - if current_user == @user
+    -#   %span{class: "fa fa-pencil user--edit"}
+    %ul.profile--list
+      %li.profile--list-item
+        %span
+          Дата народження:
+        %span
+          =  @user.date_of_birth
+      %li.profile--list-item
+        %span
+          Місто:
+        %span
+          = @user.location
+    %p.profile--text
+      = @user.description
+
+.pet-list
+  .pet-box
+
+-# динамічне редагування сторінки юзера
+- if current_user == @user
+  = javascript_include_tag 'user_actions/user_edit.js'

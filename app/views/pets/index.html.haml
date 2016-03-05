@@ -2,34 +2,40 @@
 
 %h1 Улюбленці
 
-%ul.pets-list
+.pets-list
   - @pets.each do |pet|
-    %li.pets-list--item.pet
-      = link_to '', pet, class: 'pet--image', style: "background-image: url(#{pet.avatar})"
+    .pets-list--item.pet
+      = link_to '', pet, class: 'pet--avatar', style: "background-image: url(#{pet.avatar.url})"
       .pet--info
-        = link_to pet.name, pet, class: 'pet--name'
-        %ul.pet--details
+        = pet.name
 
-          - unless pet.age.nil?
-            %li.pet--details-item
-              = pet.age
 
-          - unless pet.gender.nil?
-            %li.pet--details-item
-              = pet.gender
 
-          - unless pet.kind.nil?
-            %li.pet--details-item
-              = pet.kind
+      -# = link_to '', pet, class: 'pet--image', style: "background-image: url(#{pet.avatar})"
+      -# .pet--info
+      -#   = link_to pet.name, pet, class: 'pet--name'
+      -#   %ul.pet--details
+      -#
+      -#     - unless pet.age.nil?
+      -#       %li.pet--details-item
+      -#         = pet.age
+      -#
+      -#     - unless pet.gender.nil?
+      -#       %li.pet--details-item
+      -#         = pet.gender
+      -#
+      -#     - unless pet.kind.nil?
+      -#       %li.pet--details-item
+      -#         = pet.kind
+      -#
+      -#     - unless pet.species.nil?
+      -#       %li.pet--details-item
+      -#         = pet.species
 
-          - unless pet.species.nil?
-            %li.pet--details-item
-              = pet.species
-
-      - if user_signed_in? && pet_owner?(pet)
-        %ul.pet--menu
-          %li.pet--menu-item
-            = link_to 'Редагувати', edit_pet_path(pet), class: 'pet--menu-link'
-          %li.pet--menu-item
-            = link_to 'Видалити', pet, class: 'pet--menu-link -danger',
-                      method: :delete, data: { confirm: 'Ви впевнені?' }
+      -# - if user_signed_in? && pet_owner?(pet)
+      -#   %ul.pet--menu
+      -#     %li.pet--menu-item
+      -#       = link_to 'Редагувати', edit_pet_path(pet), class: 'pet--menu-link'
+      -#     %li.pet--menu-item
+      -#       = link_to 'Видалити', pet, class: 'pet--menu-link -danger',
+      -#                 method: :delete, data: { confirm: 'Ви впевнені?' }

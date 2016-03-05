@@ -1,39 +1,20 @@
 %p#notice= notice
 
 - if has_any_pet?
-
   = link_to 'Добавити улюбленця', new_pet_path
-
+  
   %ul.pets-list
     - @pets.each do |pet|
-      %li.pets-list--item.pet{ data: { id: "#{pet.id}" } }
-        = link_to '', pet, class: 'pet--image', style: "background-image: url(#{pet.avatar})"
+      %li.pets-list--item.pet
+        = link_to '', pet, class: 'pet--menu-link -danger i fa fa-trash pet--cross',
+                method: :delete, data: { confirm: 'Ви впевнені?' }, remote: true
+        = link_to '', pet, class: 'pet--avatar', style: "background-image: url(#{pet.avatar.url})"
         .pet--info
-          = link_to pet.name, pet, class: 'pet--name'
-          %ul.pet--details
-
-            - unless pet.age.nil?
-              %li.pet--details-item
-                = pet.age
-
-            - unless pet.gender.nil?
-              %li.pet--details-item
-                = pet.gender
-
-            - unless pet.kind.nil?
-              %li.pet--details-item
-                = pet.kind
-
-            - unless pet.species.nil?
-              %li.pet--details-item
-                = pet.species
+          = pet.name
 
         %ul.pet--menu
           %li.pet--menu-item
-            = link_to 'Редагувати', edit_pet_path(pet), class: 'pet--menu-link'
-          %li.pet--menu-item
-            = link_to 'Видалити', pet, class: 'pet--menu-link -danger',
-                      method: :delete, data: { confirm: 'Ви впевнені?' }, remote: true
+            = link_to '', edit_pet_path(pet), class: 'pet--menu-link fa fa-pencil'
 - else
   %h1 У вас ще немає тваринок
   = link_to 'Добавити улюбленця', new_pet_path
