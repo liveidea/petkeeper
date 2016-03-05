@@ -3,6 +3,8 @@
   .profile--info
     %h2.profile--name
       = "#{@user.first_name} #{@user.last_name}"
+    - if current_user == @user
+      %span{class: "fa fa-pencil user--edit"}
     %ul.profile--list
       %li.profile--list-item
         %span
@@ -19,3 +21,7 @@
 
 .pet-list
   .pet-box
+
+-# динамічне редагування сторінки юзера
+- if current_user == @user
+  = javascript_include_tag 'user_actions/user_edit.js'
