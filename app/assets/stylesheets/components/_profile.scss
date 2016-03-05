@@ -38,7 +38,8 @@ $namespace: ".profile";
     margin-left: 10px;
     border-radius: 5px;
     flex: 1 1 auto;
-    background-color: lighten($gray-light, 5%);
+    // background-color: lighten($gray-light, 5%);
+    background-color: $white;
     padding: $padding;
   }
     &--name {

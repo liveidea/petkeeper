@@ -1,0 +1,26 @@
+.list-group-item {
+  height: 70px;
+}
+
+.requests {
+
+  &--item {
+    margin-top: 15px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    &--avatar {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+    }
+
+    &--info {
+      line-height: 70px;
+    }
+  }
+}

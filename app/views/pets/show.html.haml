@@ -1,6 +1,32 @@
 %p#notice= notice
 
-= image_tag(@pet.avatar.url)
-- if user_signed_in? && pet_owner?(@pet)
-  = link_to 'Редагувати', edit_pet_path(@pet)
-  |
+.profile
+  .profile--avatar{ style: "background-image: url(#{@pet.avatar.url})" }
+  .profile--info
+    %h2.profile--name
+      = "#{@pet.name}"
+      - if user_signed_in? && pet_owner?(@pet)
+        = link_to '', edit_pet_path(@pet), class: "fa fa-pencil user--edit"
+    %ul.profile--list
+      %li.profile--list-item
+        %span
+          Господар:
+        %span
+          =  link_to "#{@pet.user.first_name} #{@pet.user.last_name}", user_path(@pet.user)
+      %li.profile--list-item
+        %span
+          Вік:
+        %span
+          =  @pet.age
+      %li.profile--list-item
+        %span
+          Вид:
+        %span
+          = @pet.kind
+      %li.profile--list-item
+        %span
+          Порода:
+        %span
+          = @pet.species
+    %p.profile--text
+      = @pet.description

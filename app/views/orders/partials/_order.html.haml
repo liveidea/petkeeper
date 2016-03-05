@@ -6,7 +6,7 @@
         .media--avatar{ style: "background-image: url( #{@order.user.avatar })" }
         .media--info
           %span.media--name
-            = @order.user.email
+            =  link_to "#{@order.user.first_name} #{@order.user.last_name}", user_path(@order.user)
           %ul.media--list
             %li.media--list-item
               %span
@@ -18,7 +18,7 @@
         .media--avatar{ style: "background-image: url( #{@order.pet.avatar })" }
         .media--info
           %span.media--name
-            = @order.pet.name
+            =  link_to "#{@order.pet.name}", pet_path(@order.pet)
           %ul.media--list
             %li.media--list-item
               %span

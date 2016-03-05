@@ -4,13 +4,16 @@
   bottom: 0;
   width: 300px;
   right: 0px;
-  background-color: $grey-extra;
+  // background-color: $grey-extra;
+  background-color: $white;
   opacity: 0;
   visibility: hidden;
   transition: $transition-dur;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: $border-size solid $gray-light;
+  box-shadow: 0 0 10px $gray-light;
 
   &--cross {
     position: absolute;
