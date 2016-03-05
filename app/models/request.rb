@@ -4,6 +4,6 @@ class Request < ActiveRecord::Base
 
   def accept!
     self.state = 'accepted'
-    self.save
+    save
   end
 end

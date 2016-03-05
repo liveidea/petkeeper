@@ -36,9 +36,11 @@
 @import 'components/media';
 @import 'components/profile';
 @import 'components/text-block';
+@import 'components/pets-list';
+@import 'components/pet';
+@import 'components/user-menu';
+@import 'components/profile';
+@import 'components/requests';
 
- @import 'components/pets-list';
- @import 'components/pet';
- @import 'components/user-menu';
- @import 'components/profile';
- @import 'components/requests';
+// Pages
+@import 'pages/welcome';

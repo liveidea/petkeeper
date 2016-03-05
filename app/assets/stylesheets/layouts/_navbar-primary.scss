@@ -71,6 +71,11 @@
     justify-content: flex-end;
     margin-left: $margin;
     width: 150px;
+
+    &.-secondary {
+      align-items: center;
+      width: auto;
+    }
   }
 
   &--user-inner {
@@ -111,7 +116,6 @@
   &--helper {
     display: none;
     height: $main-navbar-height;
-    margin-bottom: $margin;
     width: 100%;
   }
 }

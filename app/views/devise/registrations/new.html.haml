@@ -1,33 +1,41 @@
 = bootstrap_devise_error_messages!
 .panel.panel-default
   .panel-heading
-    %h4= t('.sign_up', :default => "Sign up")
+    %h4 Реєстрація акаунту
   .panel-body
-    = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f|
+    = form_for(resource,
+                as: resource_name,
+                url: registration_path(resource_name),
+                html: { role: 'form' }) do |f|
       .form-group
-        = f.label :email
-        = f.email_field :email, autofocus: true, class: "form-control"
+        = f.label 'Емейл'
+        = f.email_field :email, autofocus: true, class: 'form-control'
       .form-group
-        = f.label "First name"
-        = f.text_field :first_name, class: "form-control"
+        = f.label "Ім'я"
+        = f.text_field :first_name, class: 'form-control'
       .form-group
-        = f.label "Last name"
-        = f.text_field :last_name, class: "form-control"
+        = f.label 'Прізвище'
+        = f.text_field :last_name, class: 'form-control'
       .form-group
-        = f.label "Дата народження"
+        = f.label 'Дата народження'
         = f.date_select :date_of_birth
       .form-group
-        = f.label "Ваше місто"
+        = f.label 'Номер телефону'
+        = f.text_field :phone, class: 'form-control js-phone-input-mask'
+        .form-group
+        = f.label 'Ваше місто'
         = f.text_area :location, class: 'form-control'
       .form-group
-        = f.label "Про вас"
+        = f.label 'Про вас'
         = f.text_area :description, class: 'form-control'
       .form-group
         = f.label :password
-        %br/
-        = f.password_field :password, class: "form-control"
       .form-group
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation, class: "form-control"
-      = f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary"
-= render "devise/shared/links"
+        = f.label 'Пароль'
+        %br/
+        = f.password_field :password, class: 'form-control'
+      .form-group
+        = f.label 'Підтвердження паролю'
+        = f.password_field :password_confirmation, class: 'form-control'
+      = f.submit 'Зареєструвати акаунт', class: 'btn btn-primary'
+= render 'devise/shared/links'
