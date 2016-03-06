@@ -6,20 +6,21 @@
     = link_to 'зареєструйтесь', new_user_registration_path
 = render 'orders/partials/order'
 
-
+%h3 Заявка на тваринку
 - if can_create_request?(@order)
   = render 'requests/form'
 
 - if user_signed_in? && order_owner?(@order)
   = link_to 'Редагувати', edit_order_path(@order)
-%h3 Кандидати
-%ul.requests
-  - @requests.each do |request|
-    %li.list-group-item.requests--item
-      .requests--item--avatar{ style: "background-image: url(#{request.user.avatar.url})" }
-      .requests--item--info
-        =  link_to "#{request.user.first_name} #{request.user.last_name}", user_path(request.user)
-        |
-        =  request.message
-        |
-        = link_to 'Обрати кандидата', order_request_path(request.order, request)
+- if @requests.any?
+  %h3 Кандидати
+  %ul.requests
+    - @requests.each do |request|
+      %li.list-group-item.requests--item
+        .requests--item--avatar{ style: "background-image: url(#{request.user.avatar.url})" }
+        .requests--item--info
+          =  link_to "#{request.user.first_name} #{request.user.last_name}", user_path(request.user)
+          |
+          =  request.message
+          |
+          = link_to 'Обрати кандидата', order_request_path(request.order, request)

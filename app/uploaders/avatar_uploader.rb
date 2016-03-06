@@ -13,6 +13,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
     resize_to_fit(50, 50)
   end
 
+  def default_url
+    #   # For Rails 3.1+ asset pipeline compatibility:
+    if  model.class.name == 'User'
+      ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-user-default.jpeg'].compact.join('_'))
+    else
+      ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-pet-default.jpeg'].compact.join('_'))
+    end
+  end
 end
 
 
@@ -39,14 +47,14 @@ end
 #   end
 #
 #   # Provide a default URL as a default if there hasn't been a file uploaded:
-#   def default_url
-#     #   # For Rails 3.1+ asset pipeline compatibility:
-#     if  model.class.name == 'User'
-#       ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-user-default.jpeg'].compact.join('_'))
-#     else
-#       ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-pet-default.jpeg'].compact.join('_'))
-#     end
-#   end
+  # def default_url
+  #   #   # For Rails 3.1+ asset pipeline compatibility:
+  #   if  model.class.name == 'User'
+  #     ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-user-default.jpeg'].compact.join('_'))
+  #   else
+  #     ActionController::Base.helpers.asset_path('default-avatars/' + [version_name, 'avatar-pet-default.jpeg'].compact.join('_'))
+  #   end
+  # end
 #
 #   # Process files as they are uploaded:
 #   # process :scale => [200, 300]

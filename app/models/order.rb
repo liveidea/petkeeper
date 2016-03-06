@@ -3,6 +3,9 @@ class Order < ActiveRecord::Base
   belongs_to :pet
   has_many :requests
 
+  validates :start_date, :end_date, :title, :description, presence: true
+
+
   def closed?
     requests.where(state: 'accepted').any?
   end

@@ -18,7 +18,7 @@
         = f.text_field :last_name, class: 'form-control'
       .form-group
         = f.label 'Дата народження'
-        = f.date_select :date_of_birth
+        = f.date_select :date_of_birth, start_year: 1900
       .form-group
         = f.label 'Номер телефону'
         = f.text_field :phone, class: 'form-control js-phone-input-mask'
@@ -28,8 +28,6 @@
       .form-group
         = f.label 'Про вас'
         = f.text_area :description, class: 'form-control'
-      .form-group
-        = f.label :password
       .form-group
         = f.label 'Пароль'
         %br/

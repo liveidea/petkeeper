@@ -8,28 +8,28 @@
         - @pet.errors.full_messages.each do |message|
           %li= message
   .form-group
-    = f.label :name
+    = f.label "Ім'я"
     = f.text_field :name, placeholder: "Вкажіть ім'я тваринки", class: 'form-control'
   .form-group
-    = f.label :age
+    = f.label 'Вік'
     = f.text_field :age, placeholder: 'Вкажіть вік тваринки', class: 'form-control'
   .form-group
-    = f.label :gender
+    = f.label 'Він'
     = f.radio_button :gender, 'Він', :checked => true
-    = f.label :female
+    = f.label 'Вона'
     = f.radio_button :gender, 'Вона'
 
   .form-group
-    = f.label :kind
-    = f.text_field :kind, placeholder: "Напр. Собака"
+    = f.label 'Вид'
+    = f.text_field :kind, placeholder: "Напр. Собака", class: 'form-control'
   .form-group
-    = f.label :species
-    = f.text_field :species, placeholder: "Напр. Пітбуль"
+    = f.label 'Порода'
+    = f.text_field :species, placeholder: "Напр. Пітбуль", class: 'form-control'
   .form-group
-    = f.label :description
+    = f.label 'Опис'
     = f.text_area :description, placeholder: 'Вкажіть опис тваринки', class: 'form-control'
   .form-group
-    = f.file_field :avatar
-    = f.hidden_field :avatar_cache
+    = f.file_field 'Фото'
+    = f.hidden_field :avatar_cache, class: 'form-control'
   .form-group
-    %button.btn.btn-default{:type => "submit"} Зареєструвати тваринку
+    %button.btn.btn-default{:type => "submit"} Зберегти
