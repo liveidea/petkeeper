@@ -16,6 +16,8 @@
               %span
                 = @order.user.date_of_birth
 
+
+    .layout-primary--description
       %li.layout-primary--list-item.media
         .media--avatar{ style: "background-image: url( #{@order.pet.avatar })" }
         .media--info
@@ -37,8 +39,6 @@
                 Kind:
               %span
                 = @order.pet.kind
-
-    .layout-primary--description
 
       .text-block
         %h4.text-block--headline
@@ -65,6 +65,17 @@
                 )
 
   .layout-primary--body
+
+  %li.list-group-item.requests--item
+    .requests--item--avatar{ style: "background-image: url(#{@request.user.avatar.url})" }
+    .requests--item--info
+      =  link_to "#{@request.user.first_name} #{@request.user.last_name}", user_path(@request.user)
+      |
+      =  @request.message
+      |
+      = form_for [@order, @request] do |f|
+        = f.check_box :state
+        = f.submit
 
 
 - if user_signed_in? && request_owner?(@request)

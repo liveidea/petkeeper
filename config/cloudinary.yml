@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dhcba8amn
+  api_key: '543135187633963'
+  api_secret: rJDwv2FL8MVuHK_2HyRWc54DZ5Y
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dhcba8amn
+  api_key: '543135187633963'
+  api_secret: rJDwv2FL8MVuHK_2HyRWc54DZ5Y
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dhcba8amn
+  api_key: '543135187633963'
+  api_secret: rJDwv2FL8MVuHK_2HyRWc54DZ5Y
+  enhance_image_tag: true
+  static_image_support: false
