@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def can_submit_request_for_order?(order)
+    !order.requests.where(state: '1').any?
+  end
+
   def can_create_order?
     user_signed_in? && has_any_pet?
   end

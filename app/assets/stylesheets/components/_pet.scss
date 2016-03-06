@@ -1,9 +1,19 @@
 .pet {
   border: $border-size solid $gray-light;
+  border-radius: 10px;
+  box-shadow: 0 0 2px $gray-light;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  overflow: hidden;
   position: relative;
+  transition: $transition-dur;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 10px $gray-light;
+    text-decoration: none;
+    transform: scale(1.1);
+  }
 
   &--cross {
     position: absolute;
@@ -20,7 +30,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     flex: none;
-    height: 250px;
+    height: 230px;
   }
 
   &--info {
@@ -60,17 +70,19 @@
 
   &--menu {
     flex: none;
-    padding: 0;
-    margin-left: 10px;
+    padding: floor($padding / 2) $padding;
     list-style: none;
   }
 
   &--menu-link {
     color: $gray-dark;
     font-size: $font-size-small;
+    transition: $transition-dur;
 
     &:hover {
       color: $gray-dark;
+      transform: scale(1.1);
+      text-decoration: none;
     }
   }
 
