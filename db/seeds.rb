@@ -26,8 +26,8 @@ pets = Pet.create([
 
 orders = Order.create([
   { start_date: Time.now + 2.days, end_date: Time.now + 7.days, user: users[0], pet: users[0].pets[0], title: 'Поcидіти з собакою', description: 'їду закордон,потрібна взяти собаку на тиждень' },
-  { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з котом', description: 'їду закордон,потрібна взяти кота на тиждень' },
-  { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з котом', description: 'їду закордон,потрібна взяти кота на тиждень' }
+  { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з собакою', description: 'їду закордон,потрібна взяти кота на тиждень' },
+  { start_date: Time.now + 5.days, end_date: Time.now + 10.days, user: users[2], pet: users[2].pets[1], title: 'Поcидіти з собакою', description: 'їду закордон,потрібна взяти кота на тиждень' }
 ])
 
 requests = Request.create([
