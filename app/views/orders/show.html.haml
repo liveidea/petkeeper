@@ -15,20 +15,8 @@
 - if @requests.any?
   %h3 Кандидати
   %ul.requests
-    - @requests.where(state: '1').each do |request|
-      %li.list-group-item.requests--item.-success
-        .requests--item-avatar{ style: "background-image: url(#{request.user.avatar.url})" }
-        .requests--item-info
-          .requests--item-info-inner
-            .requests--item-name
-              =  link_to "#{request.user.first_name} #{request.user.last_name}", user_path(request.user)
-            %p.requests--item-message
-              =  request.message
-          - if order_owner?(@order) && can_submit_request_for_order?(@order)
-            = link_to 'Обрати кандидата', order_request_path(request.order, request), class: 'btn btn-success'
-
-    - @requests.where.not(state: '1').each do |request|
-      %li.list-group-item.requests--item
+    - @requests.each do |request|
+      %li.list-group-item.requests--item{ class: request.state == '1' ? '-success' : '' }
         .requests--item-avatar{ style: "background-image: url(#{request.user.avatar.url})" }
         .requests--item-info
           .requests--item-info-inner
