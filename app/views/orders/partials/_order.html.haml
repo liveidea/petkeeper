@@ -1,7 +1,7 @@
 .layout-primary
   .layout-primary--header
     %ul.layout-primary--list
-
+      %h3 Господар
       %li.layout-primary--list-item.media
         .media--avatar{ style: "background-image: url( #{@order.user.avatar })" }
         .media--info
@@ -14,6 +14,10 @@
               %span
                 = @order.user.date_of_birth
 
+
+
+    .layout-primary--description
+      %h3 Тваринка
       %li.layout-primary--list-item.media
         .media--avatar{ style: "background-image: url( #{@order.pet.avatar })" }
         .media--info
@@ -35,8 +39,7 @@
                 Kind:
               %span
                 = @order.pet.kind
-
-    .layout-primary--description
+      %br
 
       .text-block
         %h4.text-block--headline

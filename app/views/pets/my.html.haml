@@ -2,7 +2,7 @@
 
 - if has_any_pet?
   = link_to 'Добавити улюбленця', new_pet_path
-  
+
   %ul.pets-list
     - @pets.each do |pet|
       %li.pets-list--item.pet

@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
     message = "Привіт, #{current_user.first_name}! Ви успішно добавили #{@pet.name} до свого списку тварин."
 
-    Sms.send_sms(current_user.phone, message) if current_user.phone.present?
+    # Sms.send_sms(current_user.phone, message) if current_user.phone.present?
 
     respond_to do |format|
       if @pet.save
