@@ -11,7 +11,7 @@
     = f.select 'pet_id', current_user.pets.all.collect {|p| [ p.name, p.id ] }, {}, class: 'form-control'
   .form-group
     = f.label 'Мета оголошення'
-    = f.text_field :title, placeholder: 'Взяти собаку на 3 дні', class: 'form-control'
+    = f.text_field :title, placeholder: 'Віддати собаку в хороші руки на 3 дні', class: 'form-control'
   .form-group
     = f.label "Опис оголошення"
     %br

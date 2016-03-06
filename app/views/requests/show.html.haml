@@ -65,17 +65,18 @@
                 )
 
   .layout-primary--body
-
-  %li.list-group-item.requests--item
-    .requests--item--avatar{ style: "background-image: url(#{@request.user.avatar.url})" }
-    .requests--item--info
-      =  link_to "#{@request.user.first_name} #{@request.user.last_name}", user_path(@request.user)
-      |
-      =  @request.message
-      |
-      = form_for [@order, @request] do |f|
-        = f.check_box :state
-        = f.submit
+    .list-group-item.requests--item
+      .requests--item-avatar{ style: "background-image: url(#{@request.user.avatar.url})" }
+      .requests--item-info
+        .requests--item-info-inner
+          .requests--item-name
+            =  link_to "#{@request.user.first_name} #{@request.user.last_name}", user_path(@request.user)
+          %p.requests--item-message
+            =  @request.message
+        - if order_owner?(@order) && can_submit_request_for_order?(@order)
+          = form_for [@order, @request], class: 'no-margin' do |f|
+            = f.check_box :state, checked: true, class: 'hidden'
+            = f.submit 'Підтвердити кандидата', class: 'btn btn-success'
 
 
 - if user_signed_in? && request_owner?(@request)

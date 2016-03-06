@@ -1,6 +1,8 @@
 %h1 Оголошення
 
 - if can_create_order?
-  = link_to 'Створити оголошення', new_order_path
-
+  = link_to 'Створити оголошення', new_order_path, class: 'btn btn-success btn-call-to-action'
+- else
+  Для того щоб створити оголошення спочатку
+  = link_to 'додайте тваринку', new_pet_path
 = render 'orders/partials/order_table'

@@ -1,3 +1,1 @@
-var petId = "<%= @pet.id %>";
-var dataId = $('.pet').data('id');
-$('.pet[data-id="' + dataId + '"]').fadeOut();
+$('.pet[data-id="' + <%= @pet.id %> + '"]').fadeOut();

@@ -3,24 +3,41 @@
 }
 
 .requests {
+  list-style: none;
+  padding: 0;
 
   &--item {
-    margin-top: 15px;
-    padding: 0;
     display: flex;
-    align-items: center;
+    margin-top: $margin;
+    padding: floor($padding / 2);
 
-    &--avatar {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
+    &.-success {
+      background-color: lighten($green, 25%);
     }
 
-    &--info {
-      line-height: 70px;
+    &-avatar {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 100%;
+      margin-right: $margin;
+      width: 60px;
+    }
+
+    &-info {
+      align-items: center;
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: space-between;
+    }
+
+    &-info-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-message {
+      margin: 0;
     }
   }
 }

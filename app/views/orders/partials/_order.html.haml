@@ -10,40 +10,38 @@
           %ul.media--list
             %li.media--list-item
               %span
-                Date of birth:
+                Вік:
               %span
-                = @order.user.date_of_birth
+                = @order.user.age
 
 
 
     .layout-primary--description
       %h3 Тваринка
       %li.layout-primary--list-item.media
-        .media--avatar{ style: "background-image: url( #{@order.pet.avatar })" }
+        .media--avatar{ style: "background-image: url(#{@order.pet.avatar})" }
         .media--info
           %span.media--name
             =  link_to "#{@order.pet.name}", pet_path(@order.pet)
           %ul.media--list
             %li.media--list-item
               %span
-                Age:
+                Вік:
               %span
                 = @order.pet.age
             %li.media--list-item
               %span
-                Gender:
+                Стать:
               %span
                 = @order.pet.gender
             %li.media--list-item
               %span
-                Kind:
+                Вид:
               %span
                 = @order.pet.kind
       %br
 
       .text-block
-        %h4.text-block--headline
-          = @order.title
         %ul.text-block--list
           %li.text-block--list-item
             %span
